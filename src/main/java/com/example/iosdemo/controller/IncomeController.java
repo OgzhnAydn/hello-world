@@ -15,8 +15,10 @@ import java.util.List;
 
 @Controller
 public class IncomeController {
-     //Log4J2LoggingSystem getLogger=Log4J2LoggingSystem.get(Logging.)
-     //Logger logger = LoggerFactory.getLogger(LoggingController.class);
+
+
+    //Log4J2LoggingSystem getLogger=Log4J2LoggingSystem.get(Logging.)
+    //Logger logger = LoggerFactory.getLogger(LoggingController.class);
     private static final Logger logger = LogManager.getLogger(IncomeController.class);
     private List<Integer> num = Arrays.asList(1, 2, 3, 4, 5);
 
@@ -24,21 +26,16 @@ public class IncomeController {
     @Autowired
     IncomeServices incomeServices;
     @CrossOrigin
-    @PostMapping("saveIncome")
+    @PostMapping("saveIncomes")
     private  ResponseEntity<Income> saveIncome(@RequestBody Income income){
         incomeServices.saveOrUpdate(income);
         System.out.println("incomeServices.getAllIncome() = " + income.getId());
         logger.info("Save  Income Operation",income.getId());
         return new ResponseEntity(income.getId(),HttpStatus.OK) ;
 
-    }
 
-    @GetMapping("/getAllIncomes")
-    ResponseEntity<Income> getAllStudent()
-    {
-        System.out.println("incomeServices.getAllIncome() = " + incomeServices.getAllIncome());
-        return new  ResponseEntity(incomeServices.getAllIncome(),HttpStatus.OK);
 
     }
 
+   //TODO get all incomex"
 }
