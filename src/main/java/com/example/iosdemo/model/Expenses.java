@@ -16,11 +16,19 @@ public class Expenses {
     private Long id;
     private double amount;
     private Date expensesDate;
-    private String  whereTo;
+    private Integer  quantity;
+    private String Content;
+    private String Explanation;
+
+    public Expenses() {
+
+    }
 
     public Long getId() {
         return id;
     }
+
+
 
     public void setId(Long id) {
         this.id = id;
@@ -42,17 +50,28 @@ public class Expenses {
         this.expensesDate = expensesDate;
     }
 
-    public String getWhereTo() {
-        return whereTo;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setWhereTo(String whereTo) {
-        this.whereTo = whereTo;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
+    public String getContent() {
+        return Content;
+    }
 
+    public void setContent(String content) {
+        Content = content;
+    }
 
-    public Expenses() {
+    public String getExplanation() {
+        return Explanation;
+    }
+
+    public void setExplanation(String explanation) {
+        Explanation = explanation;
     }
 
     @Override
@@ -61,7 +80,9 @@ public class Expenses {
                 "id=" + id +
                 ", amount=" + amount +
                 ", expensesDate=" + expensesDate +
-                ", whereTo='" + whereTo + '\'' +
+                ", quantity=" + quantity +
+                ", Content='" + Content + '\'' +
+                ", Explanation='" + Explanation + '\'' +
                 '}';
     }
 }
